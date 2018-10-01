@@ -26,7 +26,7 @@ def signup_form():
 
     if username == "":
         username_error = "Enter a valid username"
-    elif len(username) <= 3 or len(username) > 20:
+    elif len(username) < 3 or len(username) >= 20:
         username_error = "Your username must be between 3 and 20 characters long."
         username = ""
     elif " " in username:
@@ -35,13 +35,13 @@ def signup_form():
 
     if password == "": 
         password_error = "Please enter a valid password."
-    elif len(password) <= 3 or len(password) >= 20:
+    elif len(password) < 3  or len(password) >= 20:
         password_error = "Password must be between 3 and 20 characters long."
     elif " " in password:
         password_error = "No spaces allowed in password."
 
     if verify == "" or verify != password: 
-        verify_error = "Passwords do not match. Please try again."
+        verify_error = "Passwords do not match or entry is invalid. Please try again."
         verify = ""
 
     if email != "":
